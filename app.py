@@ -225,7 +225,7 @@ with tab_sweeps:
     st.markdown("27 market configurations, each trained by self-play evolution "
                 "and re-evaluated on 2,000 fresh markets. Hover-free static "
                 "charts; every difference quoted is far above noise "
-                "(SEMs ≤ 0.0013).")
+                "(SEMs ≤ 0.0017).")
     here = os.path.dirname(os.path.abspath(__file__))
     df = pd.read_csv(os.path.join(here, "sweep_results.csv"))
 
@@ -309,7 +309,7 @@ with tab_sweeps:
             label="learned")
     a2.plot(d["T"], d.fixed07_mean, "s--", color="#94a3b8", label="fixed 0.7")
     a2.set(xlabel="time budget T", ylabel="mean satisfaction",
-           title="A fixed bar can't exploit more time")
+           title="A fixed bar plateaus; the learned bar keeps gaining")
     for a in (a1, a2):
         a.grid(alpha=0.25)
     a2.legend(frameon=False)

@@ -155,7 +155,7 @@ def threshold_policy(e: float, theta0: float, theta1: float) -> Dict:
 def make_baseline(kind: str, cfg: Optional[MarketConfig] = None) -> Dict:
     """Fixed heuristic baselines.
 
-    * "secretary37": explore e = floor(T / e) ~= 37% of the time budget
+    * "secretary37": explore floor(T/ℯ) ~= 37% of the time budget
       inspecting only, then buy the first inspected style still in stock with
       v >= max v seen during the explore phase.  This is the cardinal-value
       analog of the classic secretary problem (which is ordinal and assumes
